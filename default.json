@@ -1,0 +1,18 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:best-practices",
+        "github>auricom/renovate-config:labels",
+        "github>auricom/renovate-config:githubActions",
+        "github>auricom/renovate-config:githubReleases",
+        "github>auricom/renovate-config:semanticCommits"
+    ],
+    "baseBranches": ["main"],
+    "platform": "github",
+    "platformCommit": true,
+    "onboarding": false,
+    "requireConfig": "optional",
+    "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+    "suppressNotifications": ["prIgnoreNotification"],
+    "ignorePaths": ["**/.archive/**"]
+}
