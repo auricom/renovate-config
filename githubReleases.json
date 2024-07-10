@@ -1,0 +1,15 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "customManagers": [
+        {
+            "customType": "regex",
+            "fileMatch": ["^.*$"],
+            "matchStrings": [
+                "# renovate: datasource=github-releases depName=(?<depName>.*?)\\s*\\n(?<variableName>[A-Z0-9_]+)=(?<currentValue>.*)"
+            ],
+            "datasourceTemplate": "github-releases",
+            "depNameTemplate": "{{{depName}}}",
+            "versioningTemplate": "semver"
+        }
+    ]
+}
