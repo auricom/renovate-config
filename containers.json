@@ -1,0 +1,31 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "customManagers": [
+        {
+            "customType": "regex",
+            "fileMatch": [
+                "(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$",
+                "(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$"
+            ],
+            "matchStrings": [
+                "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s(?:ENV|ARG) .+?_VERSION[ =]\"?(?<currentValue>.+?)\"?\\s"
+            ]
+        }
+    ],
+    "packageRules": [
+        {
+            "description": "Auto-merge container digests",
+            "matchDatasources": ["docker"],
+            "automerge": true,
+            "automergeType": "branch",
+            "requiredStatusChecks": null,
+            "matchUpdateTypes": ["digest"],
+            "matchPackagePatterns": [
+                "ghcr.io/auricom",
+                "ghcr.io/bjw-s",
+                "ghcr.io/onedr0p",
+                "cgr.dev/chainguard"
+            ]
+        }
+    ]
+}
