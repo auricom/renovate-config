@@ -27,6 +27,11 @@
                 "ghcr.io/ublue-os",
                 "cgr.dev/chainguard"
             ]
+        },
+        {
+            "matchDatasources": ["docker"],
+            "matchPackagePatterns": ["kopia"],
+            "allowedVersions": "<999"
         }
     ]
 }
