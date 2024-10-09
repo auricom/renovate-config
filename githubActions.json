@@ -6,6 +6,7 @@
             "matchManagers": ["github-actions"],
             "automerge": true,
             "automergeType": "branch-push",
+            "ignoreTests": true,
             "matchUpdateTypes": ["minor", "patch", "digest"]
         }
     ]
