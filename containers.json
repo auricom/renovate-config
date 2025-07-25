@@ -14,12 +14,8 @@
         {
             "customType": "regex",
             "description": "Update quadlet container images",
-            "fileMatch": [
-                "[.]container([.]disabled)?$"
-            ],
-            "matchStrings": [
-                "Image=(?<depName>\\S*):(?<currentValue>\\S*)"
-            ],
+            "managerFilePatterns": ["/[.]container$/"],
+            "matchStrings": ["Image=(?<depName>\\S*):(?<currentValue>\\S*)"],
             "datasourceTemplate": "docker"
         }
     ],

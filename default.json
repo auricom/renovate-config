@@ -11,7 +11,7 @@
     ],
     "baseBranches": ["main"],
     "platform": "github",
-    "platformCommit": true,
+    "platformCommit": "enabled",
     "onboarding": false,
     "requireConfig": "optional",
     "dependencyDashboardTitle": "Renovate Dashboard 🤖",
