@@ -17,6 +17,14 @@
             "managerFilePatterns": ["/[.]container$/"],
             "matchStrings": ["Image=(?<depName>\\S*):(?<currentValue>\\S*)"],
             "datasourceTemplate": "docker"
+        },
+        {
+            "customType": "regex",
+            "description": "Minio container",
+            "managerFilePatterns": ["/[.]container$/"],
+            "matchStrings": ["Image=(?<depName>\\S*):(?<currentValue>RELEASE\\.(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)T\\d{2}-\\d{2}-\\d{2}Z)@sha256:(?<sha256>[0-9a-f]{64})"],
+            "datasourceTemplate": "docker",
+            "versioningTemplate": "regex:^RELEASE\\.(?<major>\\d+)-(?<minor>\\d+)-(?<patch>\\d+)T.*Z$"
         }
     ],
     "packageRules": [
