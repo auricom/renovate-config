@@ -10,6 +10,18 @@
             "matchStrings": [
                 "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s(?:ENV|ARG) .+?_VERSION[ =]\"?(?<currentValue>.+?)\"?\\s"
             ]
+        },
+        {
+            "customType": "regex",
+            "description": "Update quadlet container images",
+            "managerFilePatterns": [
+                "/^.*\\.image$/",
+                "/^.*\\.container$/"
+            ],
+            "matchStrings": [
+                "Image=\\s*(?<depName>[^:@\\s]+(?:\\/[^:@\\s]+)*):(?<currentValue>[^@\\s]+)(?:@(?<currentDigest>sha256:[a-f0-9]{64}))?"
+            ],
+            "datasourceTemplate": "docker"
         }
     ],
     "packageRules": [
