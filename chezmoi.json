@@ -1,0 +1,12 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "customManagers": [
+        {
+            "customType": "regex",
+            "fileMatch": ["^\\.chezmoiexternals/.*\\.toml\\.tmpl$"],
+            "matchStrings": [
+                "# renovate: datasource=(?<datasource>[^\\s]+) depName=(?<depName>[^\\s]+)\\n\\{\\{- \\$\\w+ := \"(?<currentValue>[^\"]+)\" \\}\\}"
+            ]
+        }
+    ]
+}

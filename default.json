@@ -3,6 +3,7 @@
     "extends": [
         "config:best-practices",
         ":disableRateLimiting",
+        "github>auricom/renovate-config:chezmoi",
         "github>auricom/renovate-config:containers",
         "github>auricom/renovate-config:labels",
         "github>auricom/renovate-config:githubActions",
