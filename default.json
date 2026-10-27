@@ -17,5 +17,8 @@
     "requireConfig": "optional",
     "dependencyDashboardTitle": "Renovate Dashboard 🤖",
     "suppressNotifications": ["prIgnoreNotification"],
+    "lockFileMaintenance": {
+        "schedule": ["* * * * 1"]
+    },
     "ignorePaths": ["**/.archive/**"]
 }
